@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>회원가입 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        .btn {
+            margin: 20px;
+            padding: 15px 150px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            display: block;
+            font-size: 20px;
+            text-decoration: none; /* 링크 기본 밑줄 제거 */
+        }
+
+        .naver {
+            background-color: #1ec800;
+            color: white;
+        }
+        .kakao {
+            background-color: #fee500;
+            color: black;
+        }
+        .separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #bbb;
+            margin-top: 20px; /* 섹션 간격 추가 */
+            margin-bottom: 20px; /* 섹션 간격 추가 */
+        }
+        .separator::before,
+        .separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #bbb;
+        }
+        .separator::before {
+            margin-right: .25em;
+        }
+        .separator::after {
+            margin-left: .25em;
+        }
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px; /* 이미지 간격 추가 */
+            margin-left: 100px;
+        }
+        .naver-logo {
+            width: 55px; /* 네이버 로고 크기 조정 */
+        }
+        .kakao-logo {
+            width: 300px; /* 카카오 로고 크기 조정 */
+        }
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>혼자왔니? 회원가입</h1>
+        <p>네이버, 카카오와 같은계정이면 3초 만에 가입이 완료!</p>
+        <button class="btn naver" onclick="location.href='https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id={YOUR_NAVER_CLIENT_ID}&redirect_uri={YOUR_REDIRECT_URI}&state={YOUR_STATE}'">네이버로 시작하기</button>
+        <button class="btn kakao" onclick="location.href='https://kauth.kakao.com/oauth/authorize?client_id={713035d88ccb3097c7494be1fc34d8c5}&redirect_uri={http://localhost/kakaoLogin}&response_type=code'">카카오로 시작하기</button>
+        <div class="separator">또는</div>
+        <p>이미 계정이 있으신가요?</p>
+        <div class="logo-container">
+            <div class="naver-logo">
+                <img src="../img/naver.png">
+            </div>
+            <div class="kakao-logo">
+                <img src="../img/카카오톡.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
